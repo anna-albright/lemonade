@@ -1,18 +1,3 @@
-/*
- * Copyright (C) 2021 The Android Open Source Project.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.example.lemonade
 
 import androidx.appcompat.app.AppCompatActivity
@@ -25,8 +10,6 @@ class MainActivity : AppCompatActivity() {
 
     /**
      *
-     * Anything labeled var instead of val is expected to be changed in the functions but DO NOT
-     * alter their initial values declared here, this could cause the app to not function properly.
      */
     private val LEMONADE_STATE = "LEMONADE_STATE"
     private val LEMON_SIZE = "LEMON_SIZE"
@@ -54,13 +37,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // === DO NOT ALTER THE CODE IN THE FOLLOWING IF STATEMENT ===
         if (savedInstanceState != null) {
             lemonadeState = savedInstanceState.getString(LEMONADE_STATE, "select")
             lemonSize = savedInstanceState.getInt(LEMON_SIZE, -1)
             squeezeCount = savedInstanceState.getInt(SQUEEZE_COUNT, -1)
         }
-        // === END IF STATEMENT ===
 
         lemonImage = findViewById(R.id.image_lemon_state)
         setViewElements()
